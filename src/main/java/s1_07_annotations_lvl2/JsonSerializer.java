@@ -6,7 +6,7 @@ import java.io.File;
 import java.io.IOException;
 
 public class JsonSerializer {
-    public static void serialize(Object obj) throws IOException {
+    public static void serializeMethod(Object obj) throws IOException {
         Class<?> clazz = obj.getClass();
 
         if (!clazz.isAnnotationPresent(JsonSerializable.class)) {
