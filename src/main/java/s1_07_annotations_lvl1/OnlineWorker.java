@@ -1,5 +1,6 @@
 package s1_07_annotations_lvl1;
 
+@SuppressWarnings("deprecated")
 public class OnlineWorker extends Worker {
     private static final double INTERNET_TAX = 20.0;
 

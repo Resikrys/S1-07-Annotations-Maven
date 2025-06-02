@@ -1,5 +1,6 @@
 package s1_07_annotations_lvl1;
 
+@SuppressWarnings("deprecated")
 public class PresentialWorker extends Worker {
     private static double gasoline = 50.0;
 
