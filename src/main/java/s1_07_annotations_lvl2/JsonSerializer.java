@@ -10,22 +10,22 @@ public class JsonSerializer {
         Class<?> clazz = obj.getClass();
 
         if (!clazz.isAnnotationPresent(JsonSerializable.class)) {
-            throw new IllegalArgumentException("La classe no està anotada amb @JsonSerializable");
+            throw new IllegalArgumentException("The class is not annotated with @JsonSerializable");
         }
 
         JsonSerializable annotation = clazz.getAnnotation(JsonSerializable.class);
         String path = annotation.path();
 
-        // Crear el directorio si no existe
+        // Create directory if doesn't exist
         File directory = new File(path).getParentFile();
         if (!directory.exists()) {
             directory.mkdirs();
         }
 
-        // Serializar el objeto a JSON
+        // Serialize Object to JSON
         ObjectMapper mapper = new ObjectMapper();
         mapper.writeValue(new File(path), obj);
 
-        System.out.println("Objecte serialitzat a " + path);
+        System.out.println("Object serialized a " + path);
     }
 }
